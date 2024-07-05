@@ -4,9 +4,12 @@ from django.db import models
 
 
 class about(models.Model):
-  first_name = models.CharField(max_length=30)
-  last_name = models.CharField(max_length=30)
-  subject = models.TextField()
+  name = models.CharField(max_length=30)
+  designation = models.CharField(max_length=30)
+  image=models.ImageField(upload_to='static/about', default='')
+  description = models.TextField()
+  email  = models.EmailField(max_length=70,blank=True,unique=True)
+
 
 
 class iceCream(models.Model):
@@ -14,7 +17,19 @@ class iceCream(models.Model):
    size = models.CharField(max_length=30)
    price=models.CharField(max_length=30)
    offer_price = models.CharField(max_length=30)
-   icecream_photo = models.ImageField(max_length=200)
+   icecream_photo = models.ImageField(upload_to='static/icecream', default='')
    description = models.TextField()
-   
-        
+
+class carousel(models.Model):
+  name = models.CharField(max_length=30)
+  image = models.ImageField(upload_to='static/carousel', default='')
+  description = models.TextField()
+
+
+class Contact(models.Model):
+    fname = models.CharField(max_length=30)
+    lname = models.CharField(max_length=30)
+    country = models.CharField(max_length=30)
+    subject = models.TextField()
+    def __str__(self):
+       return self.fname

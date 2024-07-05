@@ -5,27 +5,15 @@
 {% block body %}
 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
+    {%for carousel in carouselObj %}
     <div class="carousel-item active">
-      <img src="/static/ice3.jpeg" class="d-block w-100" alt="...">
+      <img src="{{carousel.image.url}}" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>IceCream</h5>
-        <p>Happiness is... eating IceCream on a hot day.</p>
+        <h5>{{carousel.name}}</h5>
+        <p>{{carousel.description}}</p>
       </div>
     </div>
-    <div class="carousel-item">
-      <img src="/static/ice2.jpeg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>IceCream </h5>
-        <p>IceCream is the nectar of the gods.</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="/static/vv.jpeg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>IceCream</h5>
-        <p>IceCream is like a hug from the inside.</p>
-      </div>
-    </div>
+   {%endfor%}
   </div>
 </div>
 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -41,296 +29,40 @@
   <h3 class="my-2 text-center">Select from our collection of IceCream</h3>
 
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-    <div class="col">
-      <div class="card shadow-sm">
-        <img src="/static/8.jpeg" class="d-block w-100" alt="...">
-        <div class="card-body">
-          <p class="card-text">
-            <font style="vertical-align: inherit;">
-              <font style="vertical-align: inherit;">This is a wider card with supporting text below as a natural
-                introduction to additional content. This content is a little longer.</font>
-            </font>
-          </p>
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="btn-group">
-              <button type="button" class="btn btn-sm btn-outline-secondary" fdprocessedid="q4eleq">
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Offer</font>
-                </font>
-              </button>
-              <button type="button" class="btn btn-sm btn-outline-secondary" fdprocessedid="ukzsys">
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Rs...</font>
-                </font>
-              </button>
-            </div>
-            <small class="text-body-secondary">
+    {% for i in obj %}
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{{i.icecream_photo.url}}" class="d-block w-100" alt="...">
+          <div class="card-body">
+            <p class="card-text">
               <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">9 minutes</font>
+                <font style="vertical-align: inherit;">{{i.description}}</font>
               </font>
-            </small>
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary" fdprocessedid="q4eleq">
+                  <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">Offer Price Rs {{i.offer_price}}</font>
+                  </font>
+                </button>
+                <button type="button" class="btn btn-sm btn-outline-secondary" fdprocessedid="ukzsys">
+                  <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">Rs {{i.price}}</font>
+                  </font>
+                </button>
+              </div>
+              <small class="text-body-secondary">
+                <font style="vertical-align: inherit;">
+                  <font style="vertical-align: inherit;">{{i.created_date}}</font>
+                </font>
+              </small>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="col">
-      <div class="card shadow-sm">
-        <img src="/static/7.jpeg" class="d-block w-100" alt="...">
-        <div class="card-body">
-          <p class="card-text">
-            <font style="vertical-align: inherit;">
-              <font style="vertical-align: inherit;">This is a wider card with supporting text below as a natural
-                introduction to additional content. This content is a little longer.</font>
-            </font>
-          </p>
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="btn-group">
-              <button type="button" class="btn btn-sm btn-outline-secondary" fdprocessedid="vcmrgk">
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Offer</font>
-                </font>
-              </button>
-              <button type="button" class="btn btn-sm btn-outline-secondary" fdprocessedid="p3ckhj">
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Rs...</font>
-                </font>
-              </button>
-            </div>
-            <small class="text-body-secondary">
-              <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">9 minutes</font>
-              </font>
-            </small>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card shadow-sm">
-        <img src="/static/6.jpeg" class="d-block w-100" alt="...">
-        <div class="card-body">
-          <p class="card-text">
-            <font style="vertical-align: inherit;">
-              <font style="vertical-align: inherit;">This is a wider card with supporting text below as a natural
-                introduction to additional content. This content is a little longer.</font>
-            </font>
-          </p>
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="btn-group">
-              <button type="button" class="btn btn-sm btn-outline-secondary" fdprocessedid="gnmsfr">
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Offer</font>
-                </font>
-              </button>
-              <button type="button" class="btn btn-sm btn-outline-secondary" fdprocessedid="df60b">
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Rs...</font>
-                </font>
-              </button>
-            </div>
-            <small class="text-body-secondary">
-              <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">9 minutes</font>
-              </font>
-            </small>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col">
-      <div class="card shadow-sm">
-        <img src="/static/5.jpeg" class="d-block w-100" alt="...">
-        <div class="card-body">
-          <p class="card-text">
-            <font style="vertical-align: inherit;">
-              <font style="vertical-align: inherit;">This is a wider card with supporting text below as a natural
-                introduction to additional content. This content is a little longer.</font>
-            </font>
-          </p>
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="btn-group">
-              <button type="button" class="btn btn-sm btn-outline-secondary" fdprocessedid="602d2q">
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">an offer</font>
-                </font>
-              </button>
-              <button type="button" class="btn btn-sm btn-outline-secondary" fdprocessedid="v4nvei">
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">amendment</font>
-                </font>
-              </button>
-            </div>
-            <small class="text-body-secondary">
-              <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">9 minutes</font>
-              </font>
-            </small>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card shadow-sm">
-        <img src="/static/4.jpeg" class="d-block w-100" alt="...">
-        <div class="card-body">
-          <p class="card-text">
-            <font style="vertical-align: inherit;">
-              <font style="vertical-align: inherit;">This is a wider card with supporting text below as a natural
-                introduction to additional content. This content is a little longer.</font>
-            </font>
-          </p>
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="btn-group">
-              <button type="button" class="btn btn-sm btn-outline-secondary" fdprocessedid="we989k">
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">an offer</font>
-                </font>
-              </button>
-              <button type="button" class="btn btn-sm btn-outline-secondary" fdprocessedid="hn8vaw">
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">amendment</font>
-                </font>
-              </button>
-            </div>
-            <small class="text-body-secondary">
-              <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">9 minutes</font>
-              </font>
-            </small>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card shadow-sm">
-        <img src="/static/3.jpeg" class="d-block w-100" alt="...">
-        <div class="card-body">
-          <p class="card-text">
-            <font style="vertical-align: inherit;">
-              <font style="vertical-align: inherit;">This is a wider card with supporting text below as a natural
-                introduction to additional content. This content is a little longer.</font>
-            </font>
-          </p>
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="btn-group">
-              <button type="button" class="btn btn-sm btn-outline-secondary" fdprocessedid="ozvko5">
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">an offer</font>
-                </font>
-              </button>
-              <button type="button" class="btn btn-sm btn-outline-secondary" fdprocessedid="v0jro">
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">amendment</font>
-                </font>
-              </button>
-            </div>
-            <small class="text-body-secondary">
-              <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">9 minutes</font>
-              </font>
-            </small>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col">
-      <div class="card shadow-sm">
-        <img src="/static/2.jpeg" class="d-block w-100" alt="...">
-        <div class="card-body">
-          <p class="card-text">
-            <font style="vertical-align: inherit;">
-              <font style="vertical-align: inherit;">This is a wider card with supporting text below as a natural
-                introduction to additional content. This content is a little longer.</font>
-            </font>
-          </p>
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="btn-group">
-              <button type="button" class="btn btn-sm btn-outline-secondary" fdprocessedid="qjva0i">
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">an offer</font>
-                </font>
-              </button>
-              <button type="button" class="btn btn-sm btn-outline-secondary" fdprocessedid="x928qe">
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">amendment</font>
-                </font>
-              </button>
-            </div>
-            <small class="text-body-secondary">
-              <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">9 minutes</font>
-              </font>
-            </small>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card shadow-sm">
-        <img src="/static/0.jpeg" class="d-block w-100" alt="...">
-        <div class="card-body">
-          <p class="card-text">
-            <font style="vertical-align: inherit;">
-              <font style="vertical-align: inherit;">This is a wider card with supporting text below as a natural
-                introduction to additional content. This content is a little longer.</font>
-            </font>
-          </p>
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="btn-group">
-              <button type="button" class="btn btn-sm btn-outline-secondary" fdprocessedid="l0182e">
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">an offer</font>
-                </font>
-              </button>
-              <button type="button" class="btn btn-sm btn-outline-secondary" fdprocessedid="y35x8">
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">amendment</font>
-                </font>
-              </button>
-            </div>
-            <small class="text-body-secondary">
-              <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">9 minutes</font>
-              </font>
-            </small>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card shadow-sm">
-        <img src="/static/1.jpeg" class="d-block w-100" alt="...">
-        <div class="card-body">
-          <p class="card-text">
-            <font style="vertical-align: inherit;">
-              <font style="vertical-align: inherit;">This is a wider card with supporting text below as a natural
-                introduction to additional content. This content is a little longer.</font>
-            </font>
-          </p>
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="btn-group">
-              <button type="button" class="btn btn-sm btn-outline-secondary" fdprocessedid="duytr9">
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">an offer</font>
-                </font>
-              </button>
-              <button type="button" class="btn btn-sm btn-outline-secondary" fdprocessedid="oeu158">
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">amendment</font>
-                </font>
-              </button>
-            </div>
-            <small class="text-body-secondary">
-              <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">9 minutes</font>
-              </font>
-            </small>
-          </div>
-        </div>
-      </div>
-    </div>
+    {% endfor %}
+    
   </div>
 </div>
 

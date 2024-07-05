@@ -9,6 +9,18 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <title>{%block title%} {%endblock title%} IceCream Store</title>
 </head>
+<style>
+  .navbar-brand.active {
+      font-weight: bold;
+      color: red;
+  }
+  
+  .nav-item.active .nav-link {
+      font-weight: bold;
+      color: red;
+  }
+  
+</style>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -20,13 +32,15 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <li class="nav-item {% if request.path == '/' %}active{% endif %}">
+
+            <a class="nav-link " aria-current="page" href="/">Home</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item {% if request.path == '/about' %}active{% endif %} ">
+          
             <a class="nav-link" href="/about">About Us</a>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown {% if request.path == '/services' %}active{% endif %}">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Services
             </a>
@@ -39,7 +53,8 @@
               <li><a class="dropdown-item" href="#">Family Pack</a></li>
             </ul>
           </li>
-          <li class="nav-item">
+          <li class="nav-item  {% if request.path == '/contact' %}active{% endif %}">
+
             <a class="nav-link" href="/contact">Contact Us</a>
           </li>
 
@@ -48,6 +63,11 @@
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
+        <div class="mx-2">
+          <a href="/yyyt" class="btn btn-danger">Login</a>
+          <a href="/yyyt" class="btn btn-danger">SignUp</a>
+
+        </div>
       </div>
     </div>
   </nav>
@@ -60,7 +80,7 @@
 <div class="container">
   <footer class="py-3 my-4">
     <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+      <li class="nav-item"><a href="" class="nav-link px-2 text-body-secondary">Home</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
